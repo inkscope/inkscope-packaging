@@ -2,7 +2,7 @@ Summary: inkscope
 Name: inkscope
 %define inkscope_version 1.0.0
 Version: %{inkscope_version} 
-Release: 2
+Release: 6
 License: Apache License
 Packager: Eric Mourgaya <eric.mourgaya@arkea.com>
 Distribution: Redhat
@@ -84,6 +84,7 @@ install -m 700 DISTRIBS/confs/init.d/cephprobe %{buildroot}/etc/init.d/
 install -m 700 DISTRIBS/confs/init.d/ceph-rest-api %{buildroot}/etc/init.d/
 install -m 644 DISTRIBS/confs/logrotate/inkscope  %{buildroot}/etc/logrotate.d/
 install -m 644 DISTRIBS/confs/logrotate/cephrestapi  %{buildroot}/etc/logrotate.d/
+
 install -m 644 DISTRIBS/confs/httpd/inkScope.conf  %{buildroot}/etc/httpd/conf.d/
 
 install -m 644 index.html  %{buildroot}/var/www/inkscope/
@@ -104,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 /var/www/inkscope/index.html
 /var/www/inkscope/inkscopeCtrl/*
 /var/www/inkscope/inkscopeViz/*
-/etc/httpd/conf.d/inkScope.conf
+%config(noreplace) /etc/httpd/conf.d/inkScope.conf
 
 %files sysprobe
 %defattr(-,root,root)
@@ -114,7 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 %files common
 %defattr(-,root,root)
 /opt/inkscope/bin/daemon.py
-/opt/inkscope/etc/inkscope.conf
+%config(noreplace)  /opt/inkscope/etc/inkscope.conf
 /etc/logrotate.d/inkscope
 
 %files cephprobe
