@@ -14,6 +14,8 @@ The RPMS directory  contains all  inkscope  rpms and  dependancy, and also deb p
 
 You need to  install a mongodb database and  instanciate /opt/inkscope/etc/inkscope.conf file. You can use chef or puppet to do this.
 
+A version of python-psutils greater than 2.0  is needed
+
 Install it on Debian compliant os:
 =================================
 Add the  repository in your source list:
