@@ -4,7 +4,7 @@ inkscope-packaging
 packaging tools for inkscope
 ----------------------------
 
-The RPMS directory  contains all  inkscope  rpms and  dependancy.
+The RPMS directory  contains all  inkscope  rpms and  dependancy, and also deb packages.
 
         inkscope-sysprobe :  installs  probes on  all servers with osd and mons
         inkscope-cephrestapi:  installs  all file to  start a ceph rest api
@@ -14,7 +14,7 @@ The RPMS directory  contains all  inkscope  rpms and  dependancy.
 
 You need to  install a mongodb database and  instanciate /opt/inkscope/etc/inkscope.conf file. You can use chef or puppet to do this.
 
-Install it on debian compliant os:
+Install it on Debian compliant os:
 =================================
 Add the  repository in your source list:
     
@@ -22,7 +22,6 @@ Add the  repository in your source list:
 
     
     deb https://github.com/mourgaya/inkscope-packaging DEBS
-
 
     apt-get update
 
