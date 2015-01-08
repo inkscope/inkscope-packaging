@@ -13,9 +13,68 @@ The RPMS directory  contains all  inkscope  rpms and  dependancy.
         inkscope-common :  contains all configuration files for probes and  admin interface.
 
 You need to  install a mongodb database and  instanciate /opt/inkscope/etc/inkscope.conf file. You can use chef or puppet to do this.
-   
-How to install cephprobe
-------------------------
+
+Install it on debian compliant os:
+=================================
+Add the  repository in your source list:
+    
+    vi /etc/apt/sources.list.d/inkscope.list
+
+    
+    deb https://github.com/mourgaya/inkscope-packaging DEBS
+
+
+    apt-get update
+
+install cephprobe
+-----------------
+on a server with a mon:
+    
+    sudo apt-get install inkscope-cephrestapi
+    /etc/init.d/cephrestapi start
+    sudo apt-get inkscope-cephprobe
+    /etc/init.d/cephprobe start
+
+install sysprobe
+----------------
+
+on each server:
+
+    sudo apt-get install inkscope-sysprobe
+    edit  /opt/inkscope/etc/inkscope.conf
+    /etc/init.d/sysprobe start
+
+
+install inskscopeviz
+--------------------
+
+on a  server SRVVIZ :
+
+    sudo apt-get install inkscope-admviz
+    edit  /opt/inkscope/etc/inkscope.conf
+    edit  /etc/apache2/conf.d/inkScope.conf
+    edit /etc/apache2/ports.conf
+        
+        Listen 8080
+
+    enable proxy module
+
+        sudo a2enmod proxy_http
+
+    enable inkscope
+        sudo a2ensite inkScope
+
+    restart apache
+        sudo service apache2 restart
+
+    http://SRVVIZ:8080/inkscopeViz
+
+
+Install it on a redhat compliant os:
+====================================
+
+install cephprobe
+-----------------
 
 on a server with a mon:
 
@@ -25,9 +84,10 @@ on a server with a mon:
     edit  /opt/inkscope/etc/inkscope.conf
     /etc/init.d/cephprobe start
     
+
      
-How to install sysprobe
------------------------
+install sysprobe
+----------------
      
 on each server:
 
@@ -36,7 +96,7 @@ on each server:
     /etc/init.d/sysprobe start
 
 
-How to  install inskscopeviz
+install inskscopeviz
 ----------------------------
 
 on a  server SRVVIZ :
