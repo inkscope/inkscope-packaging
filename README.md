@@ -23,7 +23,8 @@ Add the  repository in your source list:
     vi /etc/apt/sources.list.d/inkscope.list
 
     
-    deb https://github.com/mourgaya/inkscope-packaging DEBS
+    deb https://raw.githubusercontent.com/inkscope/inkscope-packaging/master/DEBS ./
+
 
     apt-get update
 
@@ -52,9 +53,9 @@ install inskscopeviz
 on a  server SRVVIZ :
 
     sudo apt-get install inkscope-admviz
-    edit  /opt/inkscope/etc/inkscope.conf
-    edit  /etc/apache2/conf.d/inkScope.conf
-    edit /etc/apache2/ports.conf
+    vi  /opt/inkscope/etc/inkscope.conf
+    vi  /etc/apache2/sites-available/inkScope.conf
+    vi /etc/apache2/ports.conf
         
         Listen 8080
 
