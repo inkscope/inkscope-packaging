@@ -33,7 +33,7 @@ install cephprobe
 on a server with a mon:
     
     sudo apt-get install inkscope-cephrestapi
-    /etc/init.d/cephrestapi start
+    sudo /etc/init.d/ceph-rest-api start
     sudo apt-get inkscope-cephprobe
     /etc/init.d/cephprobe start
 
