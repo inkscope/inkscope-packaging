@@ -30,7 +30,7 @@ Add the  repository in your source list:
 
 install cephprobe
 -----------------
-on a server with a mon:
+on a server SRVAPI:
     
     sudo apt-get install inkscope-cephrestapi
     sudo /etc/init.d/ceph-rest-api start
@@ -75,10 +75,10 @@ on a  server SRVVIZ :
 Install it on a redhat compliant os:
 ====================================
 
-install cephprobe
------------------
+install cephprobe and ceph-rest-api
+-----------------------------------
 
-on a server with a mon:
+on a server SRVAPI:
 
     yum install inkscope-cephrestapi
     /etc/init.d/cephrestapi start
