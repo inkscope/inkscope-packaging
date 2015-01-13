@@ -9,7 +9,7 @@ The RPMS directory  contains all  inkscope  rpms and  dependancy, and also deb p
         inkscope-sysprobe :  installs  probes on  all servers with osd and mons
         inkscope-cephrestapi:  installs  all file to  start a ceph rest api
         inkscope-cephprobe: installs the cephprobe ( only one is  needed for all the cluster)
-        inkscope-admviz : installs  inskcope insterface
+        inkscope-admviz : installs  inskcope web interface
         inkscope-common :  contains all configuration files for probes and  admin interface.
 
 You need to  install a mongodb database and  instanciate /opt/inkscope/etc/inkscope.conf file. You can use chef or puppet to do this.
@@ -22,16 +22,18 @@ Add the  repository in your source list:
     
     vi /etc/apt/sources.list.d/inkscope.list
 
-    deb https://raw.githubusercontent.com/inskscope/inkscope-packaging/master/DEBS ./
+    
+    deb https://raw.githubusercontent.com/inkscope/inkscope-packaging/master/DEBS ./
+
 
     apt-get update
 
 install cephprobe
 -----------------
-on a server with a mon:
+on a server SRVAPI:
     
     sudo apt-get install inkscope-cephrestapi
-    /etc/init.d/cephrestapi start
+    sudo /etc/init.d/ceph-rest-api start
     sudo apt-get inkscope-cephprobe
     /etc/init.d/cephprobe start
 
@@ -51,9 +53,9 @@ install inskscopeviz
 on a  server SRVVIZ :
 
     sudo apt-get install inkscope-admviz
-    edit  /opt/inkscope/etc/inkscope.conf
-    edit  /etc/apache2/conf.d/inkScope.conf
-    edit /etc/apache2/ports.conf
+    vi  /opt/inkscope/etc/inkscope.conf
+    vi  /etc/apache2/sites-available/inkScope.conf
+    vi /etc/apache2/ports.conf
         
         Listen 8080
 
@@ -73,10 +75,10 @@ on a  server SRVVIZ :
 Install it on a redhat compliant os:
 ====================================
 
-install cephprobe
------------------
+install cephprobe and ceph-rest-api
+-----------------------------------
 
-on a server with a mon:
+on a server SRVAPI:
 
     yum install inkscope-cephrestapi
     /etc/init.d/cephrestapi start
