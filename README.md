@@ -22,8 +22,7 @@ Add the  repository in your source list:
     
     vi /etc/apt/sources.list.d/inkscope.list
 
-    
-    deb https://github.com/mourgaya/inkscope-packaging DEBS
+    deb https://raw.githubusercontent.com/inskscope/inkscope-packaging/master/DEBS ./
 
     apt-get update
 
