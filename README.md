@@ -9,7 +9,7 @@ The RPMS directory  contains all  inkscope  rpms and  dependancy, and also deb p
         inkscope-sysprobe :  installs  probes on  all servers with osd and mons
         inkscope-cephrestapi:  installs  all file to  start a ceph rest api
         inkscope-cephprobe: installs the cephprobe ( only one is  needed for all the cluster)
-        inkscope-admviz : installs  inskcope insterface
+        inkscope-admviz : installs  inskcope web interface
         inkscope-common :  contains all configuration files for probes and  admin interface.
 
 You need to  install a mongodb database and  instanciate /opt/inkscope/etc/inkscope.conf file. You can use chef or puppet to do this.
