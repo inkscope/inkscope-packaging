@@ -34,7 +34,7 @@ on a server SRVAPI:
     
     sudo apt-get install inkscope-cephrestapi
     sudo /etc/init.d/ceph-rest-api start
-    sudo apt-get inkscope-cephprobe
+    sudo apt-get install inkscope-cephprobe
     /etc/init.d/cephprobe start
 
 install sysprobe
