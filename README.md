@@ -18,58 +18,8 @@ A version of python-psutils greater than 2.0  is needed
 
 Install it on Debian compliant os:
 =================================
-Add the  repository in your source list:
-    
-    vi /etc/apt/sources.list.d/inkscope.list
 
-    
-    deb https://raw.githubusercontent.com/inkscope/inkscope-packaging/master/DEBS ./
-
-
-    apt-get update
-
-install cephprobe
------------------
-on a server SRVAPI:
-    
-    sudo apt-get install inkscope-cephrestapi
-    sudo /etc/init.d/ceph-rest-api start
-    sudo apt-get install inkscope-cephprobe
-    /etc/init.d/cephprobe start
-
-install sysprobe
-----------------
-
-on each server:
-
-    sudo apt-get install inkscope-sysprobe
-    edit  /opt/inkscope/etc/inkscope.conf
-    /etc/init.d/sysprobe start
-
-
-install inskscopeviz
---------------------
-
-on a  server SRVVIZ :
-
-    sudo apt-get install inkscope-admviz
-    vi  /opt/inkscope/etc/inkscope.conf
-    vi  /etc/apache2/sites-available/inkScope.conf
-    vi /etc/apache2/ports.conf
-        
-        Listen 8080
-
-    enable proxy module
-
-        sudo a2enmod proxy_http
-
-    enable inkscope
-        sudo a2ensite inkScope
-
-    restart apache
-        sudo service apache2 restart
-
-    http://SRVVIZ:8080/inkscopeViz
+see on inkscope blog : http://inkscope.blogspot.fr/2015/03/inkscope-installation-on-debian-servers.html
 
 
 Install it on a redhat compliant os:
