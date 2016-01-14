@@ -19,7 +19,7 @@ A version of python-psutils greater than 2.0  is needed
 Install it on Debian compliant os:
 =================================
 
-see on inkscope blog : http://inkscope.blogspot.fr/2015/03/inkscope-installation-on-debian-servers.html
+see on Inkscope blog : http://inkscope.blogspot.fr/2015/12/inkscope-v13-installation-on-debian.html
 
 
 Install it on a redhat compliant os:
