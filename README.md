@@ -27,13 +27,16 @@ Install it on a redhat compliant os:
 Create a directory for you local repository, e.g. /home/user/inkscope_repo.
 Move the RPMs into that directory.
 Fix some ownership and filesystem permissions:
+
     chown -R root.root /home/user/inkscope_repo
     
 Install the createrepo package if not installed yet, and run
+
     createrepo /home/user/repo
     chmod -R o-w+r /home/user/repo
 
 Create a repository configuration file, e.g. /etc/yum.repos.d/inkscope_repo.repo containing
+
     [local]
     name=My inkScope Repo
     baseurl=file:///home/user/inkscope_repo
