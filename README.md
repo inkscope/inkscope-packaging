@@ -1,6 +1,16 @@
 inkscope-packaging
 ==================
 
+
+
+
+**no longer maintained: please use ansible playbook available at https://github.com/inkscope/inkscope-ansible**
+
+
+
+
+
+
 packaging tools for inkscope
 ----------------------------
 
